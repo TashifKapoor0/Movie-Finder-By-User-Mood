@@ -1,77 +1,71 @@
-# Byte-compiled / optimized / DLL files
+# Python / virtual environments
 __pycache__/
 *.py[cod]
 *$py.class
-
-# C extensions
-*.so
-
-# Distribution / packaging
-.Python
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
-
-# PyInstaller
-#  Usually these files are written by a python script from a template before PyInstaller builds the exe
-*.manifest
-*.spec
-
-# Installer logs
-pip-log.txt
-pip-delete-this-directory.txt
-
-# Unit test / coverage reports
-htmlcov/
-.tox/
-.nox/
-.coverage
-.coverage.*
-.cache
-nosetests.xml
-coverage.xml
-*.cover
-*.py,cover
-.hypothesis/
-
-# Jupyter Notebook
-.ipynb_checkpoints
-
-# pyenv
-.python-version
-
-# Environments
-.env
-.venv
-env/
+.venv/
 venv/
 ENV/
-env.bak/
-venv.bak/
+env/
+*.env
 
-# VS Code
-.vscode/
-
-# MacOS
-.DS_Store
-
-# Streamlit files
+# Streamlit cache & temporary files
 .streamlit/
+.cache/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
 
-# Logs
-*.log
-
-# Local files
+# Data files you don't want to commit (especially large CSVs)
+bollywood_movies_merged.csv
 *.csv
+*.xlsx
+*.parquet
+*.feather
+*.pickle
+*.pkl
+data/
+*.zip
+*.tar.gz
+
+# API keys and secrets (already handled via .env, but just in case)
+*.key
+*.pem
+*.crt
+credentials.json
+service-account.json
+
+# Windows junk
+Thumbs.db
+ehthumbs.db
+desktop.ini
+
+# IDE / editor files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.code-workspace
+
+# Logs and temporary files
+*.log
+*.tmp
+*.bak
+*.swp
+*~
+
+# Dependency directories (if you ever use pip install locally without venv)
+pip/
+pip-selfcheck.json
+
+# Deployment / build artifacts
+dist/
+build/
+*.egg-info/
+*.egg
+
+# Optional: ignore large model files if you ever download them locally
+*.bin
+*.safetensors
+*.pt
+*.pth
