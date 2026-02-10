@@ -1,43 +1,77 @@
-1. 🎬 Bollywood Movie Chatbot
+# 🍿 Mood-Based Bollywood Movie Recommender
 
-A Streamlit application to filter and browse Bollywood movies by category, actor, actress, year, and rating with an interactive and user-friendly UI.
+An intelligent, mood-aware movie recommendation web app built with **Streamlit** + **Google Gemini AI** that suggests Bollywood films based on how you're feeling right now — including support for mixed/complex emotions.
 
-2. Features
+## ✨ Features
 
-- Easy-to-use dropdown filters for movie Category, Actor, Actress, Year, and Rating.
-- Structured, collapsible cards showing detailed movie information.
-- Emoji-enhanced user interface for an engaging experience.
-- Uses a CSV dataset with Bollywood movie data.
+- Real-time mood detection from text or emoji input using **Google Gemini**
+- Supports **single** and **multiple emotions** (e.g. "sad and romantic", "tired but hopeful")
+- Dynamically suggests 1–3 categories + min rating + year range
+- Warm, personalized recommendation reason shown prominently
+- Sidebar filters: multi-select categories, actor/actress, year from, min rating
+- "Reset to AI suggestion" button
+- Clean pagination (10 movies per page)
+- Beautiful UI with mood emojis, highlighted reason box, expandable movie cards
 
-3. Prerequisites
+## 🚀 Demo
 
-- Python 3.7+
-- Streamlit
-- pandas
+*(Add a live link here when deployed)*  
+Live Demo: https://your-app-name.streamlit.app
 
-4. Installation
+## Screenshots
 
-1. Clone the repository:
-git clone https://github.com/yourusername/bollywood-movie-chatbot.git
-cd bollywood-movie-chatbot
+*(You can replace these with real screenshots later)*
 
-2. Create a virtual environment (optional but recommended):
-python -m venv venv
-source venv/bin/activate # On Windows: venv\Scripts\activate
+| Mood Input                          | Detected Mood & Reason                             | Movie Results (paginated)                     |
+|-------------------------------------|----------------------------------------------------|-----------------------------------------------|
+| "I'm feeling low today 😔"          | Sad 😔 + uplifting reason                          | Drama/Comedy movies with high ratings         |
+| "tired but romantic 💕😓"           | Stressed + Romantic → gentle romantic dramas       | Filtered & sorted results                     |
 
-3. Install required packages:
-pip install streamlit pandas
+## Tech Stack
 
-4. Place your `bollywood_movies_merged.csv` dataset file in the project directory.
+- **Frontend / App**: [Streamlit](https://streamlit.io) 1.38+
+- **AI / Mood Analysis**: [Google Gemini](https://ai.google.dev) (gemini-2.5-flash-lite)
+- **Data**: Pandas
+- **Environment**: python-dotenv
 
-5. Run the App
+## Project Structure
+mood-based-bollywood-recommender/
+├── app.py                      # Main Streamlit application
+├── bollywood_movies_merged.csv # Your movie dataset (not committed)
+├── .env.example                # Template for API keys
+├── requirements.txt
+├── .gitignore
+└── README.md
+text## Installation & Setup
 
-streamlit run your_script.py
+### 1. Clone the repository
 
-Replace `your_script.py` with the name of the main Python file.
+git clone https://github.com/YOUR-USERNAME/mood-based-bollywood-recommender.git
+cd mood-based-bollywood-recommender
 
-6. Project Structure
+2. Create virtual environment (recommended)
+   python -m venv venv
 
-- `your_script.py` - Main Streamlit app script.
-- `bollywood_movies_merged.csv` - Movie dataset.
-- `.gitignore` - Git ignore rules.
+# Windows
+venv\Scripts\activate
+
+3. Install dependencies
+   pip install -r requirements.txt
+
+5. Add your Gemini API key
+   Create .env file in root
+   envGEMINI_API_KEY=your_gemini_api_key_here
+You can get a free API key from: https://aistudio.google.com/app/apikey
+
+7. Prepare your movie dataset
+Make sure bollywood_movies_merged.csv exists in the root with at least these columns:
+
+Movie Name
+Year
+Rating
+Category
+Actor
+Actress
+
+6. Run the app
+Bashstreamlit run app.py
